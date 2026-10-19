@@ -1,0 +1,78 @@
+{
+  "name": "dsh-session-live",
+  "version": "1.0.1",
+  "private": false,
+  "type": "module",
+  "description": "Live activity preview inside DSH session hover cards: what each session is doing right now, how much it spent, and the image it touched last.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "sidebar",
+    "session",
+    "hover",
+    "preview",
+    "token-usage",
+    "live-activity"
+  ],
+  "license": "MIT",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "src",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "dsh": ">=0.2.0-rc.1 <0.2.1-0 || >=0.2.1-0 <0.3.0-0"
+  },
+  "dsh": {
+    "id": "dsh-session-live",
+    "name": "会话实时预览",
+    "version": "1.0.1",
+    "compatibility": {
+      "dsh": ">=0.2.0-rc.1 <0.3.0-0",
+      "dshReleases": {
+        "0.2.0-rc.1": "compatible",
+        "0.2.0": "compatible",
+        "0.2.1-rc.2": "compatible"
+      }
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "scripts": {
+    "test:all": "node test/run-all.mjs",
+    "test": "node test/load-check.mjs && node test/activity-check.mjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh": ">=0.2.0-rc.1 <0.2.1-0 || >=0.2.1-0 <0.3.0-0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh": {
+      "optional": true
+    }
+  },
+  "homepage": "https://awesome-dsh-plugin.com/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lilcandi/dsh-session-live.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lilcandi/dsh-session-live/issues"
+  }
+}

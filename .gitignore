@@ -1,0 +1,13 @@
+node_modules/
+npm-debug.log*
+*.log
+.DS_Store
+Thumbs.db
+.verify-home/
+_scratch/
+*.bak
+*.bak-*
+test/_archive/
+
+# 发布工具：本机专用的 GitHub API 推送管道（git transport 在本机不可用），不属于插件交付
+scripts/

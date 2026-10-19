@@ -1,0 +1,14 @@
+# dsh-session-live bundle patch。
+#
+# 安装（两种方式任选其一）：
+#   1) 在 profile 目录内：
+#        dsh plugin --profile web add file:J:/plugin/dsh-session-live
+#   2) 手工编辑 profiles/web/package.json：
+#        dependencies 里加  "dsh-session-live": "file:J:/plugin/dsh-session-live"
+#        并把 "dsh-session-live" 追加进 dsh.profile.bundles 数组
+#
+# 注意：只写这份 patch 而不把包名加进 dsh.profile.bundles，插件不会被挂载。
+# 这是本机踩过的坑：patch 一个从未被 insert 的 entry 不会让插件启动。
+- insert:
+    - id: dsh-session-live
+      name: dsh-session-live
